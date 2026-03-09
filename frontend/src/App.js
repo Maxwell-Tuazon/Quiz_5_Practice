@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';  
+import ChatbotScreen from './screens/ChatbotScreen';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomeScreen />} exact />
             <Route path='/product/:id' element={<ProductScreen />} />
+            <Route path='/chat' element={<ChatbotScreen />} />
           </Routes>
         </Container>
 

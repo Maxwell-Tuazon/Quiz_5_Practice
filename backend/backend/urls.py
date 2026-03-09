@@ -21,11 +21,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from base.views import MyTokenObtainPairView
+from django.urls import include as include_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
     path('api/', include('base.urls')),
+    path('api/chat/', include('chat.urls')),
     path('users/login/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]
 

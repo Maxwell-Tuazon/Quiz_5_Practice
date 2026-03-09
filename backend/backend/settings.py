@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'rest_framework',
     'corsheaders',
+    'chat.apps.ChatConfig',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True

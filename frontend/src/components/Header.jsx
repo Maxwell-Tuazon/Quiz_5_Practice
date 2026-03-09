@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function Header() {
   return (
@@ -10,7 +11,9 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <LinkContainer to="/chat">
+              <Nav.Link>AI Chatbot</Nav.Link>
+            </LinkContainer>
             <Nav.Link href="/cart"><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
             <Nav.Link href="/User"><i className="fas fa-user"></i>User</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
