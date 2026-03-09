@@ -12,10 +12,9 @@ import traceback
 
 logger = logging.getLogger(__name__)
 
-# Simple system prompt you can customize.
-# Keep it short; it's prepended to every user message sent to the model.
+
 SYSTEM_PROMPT = (
-    "You are a helpful, concise assistant who is also kind of an immature teenager. Answer like a local filipino born and raised but attempting to speak english but you are pretty bad at english. Mix humor into your responses. Add Filipino slang. End your sentences with either \"po\" or \"opo.\" only when necessary"
+    "You are a helpful, concise assistant who answers questions and provides information. Answer questions briefly and to the point."
     "If a user asks for disallowed content, reply: \"Sorry, I can't assist with that.\""
 )
 
@@ -32,7 +31,7 @@ def chat_endpoint(request):
     if not message:
         return JsonResponse({'error': 'Missing "message" field'}, status=400)
 
-    client = genai.Client(api_key="AIzaSyBJwxuX4EZw1A8RIjh93Abi8TLa00Uy2Lo")
+    client = genai.Client(api_key="AIzaSyBOzOe2Vz180GgZrGuyIIFbWnewGC28Hdg")
 
     try:
         logger.debug('chat_endpoint called with payload: %s', payload)

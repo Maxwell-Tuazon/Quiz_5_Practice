@@ -3,7 +3,7 @@ import { Card, Form, Button, ListGroup, InputGroup } from 'react-bootstrap';
 
 function ChatbotScreen() {
   const [messages, setMessages] = useState([
-    { id: 1, sender: 'bot', text: 'Hi — I\'m your local AI chatbot. How can I help?' },
+    { id: 1, sender: 'Artificial Idiot', text: 'Hi — I\'m your local AI chatbot. How can I help?' },
   ]);
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
@@ -32,12 +32,12 @@ function ChatbotScreen() {
       const data = await res.json();
       const botMsg = {
         id: nextId.current++,
-        sender: 'bot',
+        sender: 'Artificial Idiot',
         text: data.reply || 'No reply from server',
       };
       setMessages((m) => [...m, botMsg]);
     } catch (err) {
-      const botMsg = { id: nextId.current++, sender: 'bot', text: `Error: ${err.message}` };
+      const botMsg = { id: nextId.current++, sender: 'Artificial Idiot', text: `Error: ${err.message}` };
       setMessages((m) => [...m, botMsg]);
     } finally {
       setSending(false);
@@ -51,7 +51,7 @@ function ChatbotScreen() {
         <ListGroup variant="flush" style={{ overflowY: 'auto', flex: 1 }}>
           {messages.map((msg) => (
             <ListGroup.Item key={msg.id} className={msg.sender === 'user' ? 'text-end' : ''}>
-              <div><strong>{msg.sender === 'user' ? 'You' : 'Bot'}</strong></div>
+              <div><strong>{msg.sender === 'user' ? 'You' : 'Artificial Idiot'}</strong></div>
               <div>{msg.text}</div>
             </ListGroup.Item>
           ))}
