@@ -24,6 +24,7 @@ from base.views import MyTokenObtainPairView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('base.urls')),
     path('api/', include('base.urls')),
     path('users/login/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]
